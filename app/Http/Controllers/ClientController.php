@@ -16,10 +16,10 @@ class ClientController extends Controller
         if($token !== null){
             $client = Client::where('token', $token)->first();
 
-            return view('welcome', compact(['client']));
+            return view('home', compact(['client']));
         }
 
-        return view('welcome');
+        return view('home');
     }
 
     public function store(Request $request){
@@ -32,7 +32,7 @@ class ClientController extends Controller
 
         $client = Client::create($data);
 
-        $response = new Response( view('welcome', compact(['client'])));
+        $response = new Response( view('home', compact(['client'])));
         $response->withCookie(cookie('client', $client->token, 60 * 24 * 7));
         return $response;
     }

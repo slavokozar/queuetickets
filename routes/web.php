@@ -14,9 +14,10 @@
 Route::get('/', 'ClientController@home');
 Route::post('/client', 'ClientController@store');
 Route::post('/ticket', 'TicketController@store');
+Route::get('/ticket', 'TicketController@index');
 
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index');
 

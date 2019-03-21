@@ -36,6 +36,12 @@
 
         }
 
+
+        .container{
+            text-align: center;
+            margin: auto;
+        }
+
         .content{
             padding: 0 2rem;
             text-align: center;
