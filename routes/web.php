@@ -20,4 +20,5 @@ Route::get('/ticket', 'TicketController@index');
 Auth::routes(['register' => false]);
 
 Route::get('/admin', 'AdminController@index');
+Route::post('/admin/{id}/finish', 'AdminController@finish');
 

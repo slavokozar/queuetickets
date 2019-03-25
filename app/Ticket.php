@@ -14,4 +14,15 @@ class Ticket extends Model
         return $this->belongsTo(Client::class);
     }
 
+    public function scopeActive($query)
+    {
+        return $query->whereNull('finished_at');
+    }
+
+
+    public function scopeFinished($query)
+    {
+        return $query->whereNotNull('finished_at');
+    }
+
 }
